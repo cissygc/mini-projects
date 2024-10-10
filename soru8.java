@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class soru8 {
@@ -12,9 +11,9 @@ public class soru8 {
         System.out.print("please enter attendance percentage= ");
         double attendance = school.nextDouble();
         school.nextLine();
-        System.out.println("1-Low    2-Medium    3-High");
+        System.out.println("Low    Medium    High");
         System.out.print("please enter your participation level= ");
-        int level = school.nextInt();
+        String level = school.nextLine();
 
         char note = 'F';
 
@@ -24,29 +23,29 @@ public class soru8 {
             System.out.println("you have entered unvalid value.");
         } else {
 
-            switch (level) {
-                case 1:
-                case 2:
-                case 3:
+            switch (level.toLowerCase()) {
+                case "low":
+                case "medium":
+                case "high":
                     if (examScore >= 90) {
                         note = 'A';
                         if (attendance < 75) {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'C';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'A';
                                     break;
                                 default:
                                     note = 'B';
                             }
                         } else {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'B';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'A';
                                     break;
                                 default:
@@ -58,22 +57,22 @@ public class soru8 {
                     } else if (examScore >= 80) {
                         note = 'B';
                         if (attendance < 75) {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'D';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'B';
                                     break;
                                 default:
                                     note = 'C';
                             }
                         } else {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'C';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'A';
                                     break;
                                 default:
@@ -83,22 +82,22 @@ public class soru8 {
                     } else if (examScore >= 70) {
                         note = 'C';
                         if (attendance < 75) {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'E';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'C';
                                     break;
                                 default:
                                     note = 'D';
                             }
                         } else {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'D';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'B';
                                     break;
                                 default:
@@ -108,22 +107,22 @@ public class soru8 {
                     } else if (examScore >= 60) {
                         note = 'D';
                         if (attendance < 75) {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'F';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'D';
                                     break;
                                 default:
                                     note = 'E';
                             }
                         } else {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'E';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'C';
                                     break;
                                 default:
@@ -133,22 +132,22 @@ public class soru8 {
                     } else {
                         note = 'F';
                         if (attendance < 75) {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'F';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'E';
                                     break;
                                 default:
                                     note = 'F';
                             }
                         } else {
-                            switch (level) {
-                                case 1:
+                            switch (level.toLowerCase()) {
+                                case "low":
                                     note = 'F';
                                     break;
-                                case 3:
+                                case "high":
                                     note = 'E';
                                     break;
                                 default:
@@ -157,15 +156,16 @@ public class soru8 {
                         }
 
                     }
+                    System.out.println("your note is " + note);
                     break;
                 default:
                     System.out.println("your have entered unvalid string");
 
             }
 
-            System.out.println("your note is: " +note);
+
         }
 
 
     }
-}
+}  
